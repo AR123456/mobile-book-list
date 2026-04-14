@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 const Home = () => {
   return (
     <View style={styles.container}>
-      <Text>The number 1</Text>
+      <Text style={styles.title}>The number 1</Text>
       <Text>Reading List App</Text>
     </View>
   );
@@ -17,5 +17,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+  },
+  title: {
+    fontWeight: "bold",
+    fontSize: 18,
   },
 });
