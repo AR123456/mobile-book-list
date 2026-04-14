@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>The number 1</Text>
-      <Text>Reading List App</Text>
+      <Text style={{ marginTop: 10, marginBottom: 30 }}>Reading List App</Text>
     </View>
   );
 };
