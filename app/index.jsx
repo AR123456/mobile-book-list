@@ -12,6 +12,9 @@ const Home = () => {
       <Link style={styles.link} href="/about">
         About Page
       </Link>
+      <Link style={styles.link} href="/contact">
+        Contact Us
+      </Link>
     </View>
   );
 };
