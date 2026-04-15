@@ -9,7 +9,9 @@ const Home = () => {
       <Image source={Logo} style={styles.img}></Image>
       <Text style={styles.title}>The number 1</Text>
       <Text style={{ marginTop: 10, marginBottom: 30 }}>Reading List App</Text>
-      <Link href="/about">About Page</Link>
+      <Link style={styles.link} href="/about">
+        About Page
+      </Link>
     </View>
   );
 };
@@ -28,5 +30,9 @@ const styles = StyleSheet.create({
   },
   img: {
     marginVertical: 20,
+  },
+  link: {
+    marginVertical: 10,
+    borderBottomWidth: 1,
   },
 });

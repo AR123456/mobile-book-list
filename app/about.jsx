@@ -5,7 +5,10 @@ const About = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>About Page</Text>
-      <Link href="/"> Back to Home</Link>
+      <Link style={styles.link} href="/">
+        {" "}
+        Back to Home
+      </Link>
     </View>
   );
 };
@@ -21,5 +24,9 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
     fontSize: 18,
+  },
+  link: {
+    marginVertical: 10,
+    borderBottomWidth: 1,
   },
 });
