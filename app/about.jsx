@@ -1,9 +1,11 @@
+import { Link } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
 const About = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>About Page</Text>
+      <Link href="/"> Back to Home</Link>
     </View>
   );
 };
