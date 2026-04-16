@@ -4,8 +4,12 @@ import { Slot, Stack } from "expo-router";
 const RootLayout = () => {
   return (
     <Stack>
-      {/* can register each screen here to give them options */}
-      <Stack.Screen name="index"></Stack.Screen>
+      <Stack.Screen name="index" options={{ title: "Home" }}></Stack.Screen>
+      <Stack.Screen name="about" options={{ title: "About" }}></Stack.Screen>
+      <Stack.Screen
+        name="contact"
+        options={{ title: "Contact" }}
+      ></Stack.Screen>
     </Stack>
   );
 };
