@@ -3,8 +3,8 @@ import { StyleSheet, Text, View } from "react-native";
 
 const Contact = () => {
   return (
-    <View>
-      <Text>Contact Us </Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Contact Page</Text>
       <Link style={styles.link} href="/">
         Back to Home
       </Link>

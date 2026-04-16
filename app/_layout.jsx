@@ -1,10 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { Slot } from "expo-router";
 
 const RootLayout = () => {
   return (
-    <View>
-      <Text RootLayout></Text>
+    <View style={{ flex: 1 }}>
+      <Slot></Slot>
+      <Text>Footer</Text>
     </View>
   );
 };
