@@ -3,6 +3,7 @@ import { Slot, Stack } from "expo-router";
 
 const RootLayout = () => {
   const colorScheme = useColorScheme();
+  console.log(colorScheme);
   return (
     <Stack
       screenOptions={{
