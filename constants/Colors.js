@@ -2,7 +2,7 @@
 export const Colors = {
   primary: "#6849a7",
   warning: "#cc475a",
-
+  // dev created property names and their value
   dark: {
     text: "#d4d4d4",
     title: "#fff",
