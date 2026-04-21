@@ -1,5 +1,5 @@
 // home page of app
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import { Link } from "expo-router";
 import Logo from "../assets/img/logo_light.png";
 // import the themed view components
