@@ -1,14 +1,12 @@
-import { View, useColorScheme } from "react-native";
-import { Colors } from "../constants/Colors";
-const ThemedLogo = ({ style, ...props }) => {
+import { Image, useColorScheme } from "react-native";
+
+import DarkLogo from "../assets/img/logo_dark.png";
+import LightLogo from "../assets/img/logo_light.png";
+const ThemedLogo = () => {
   const colorScheme = useColorScheme();
-  // get themed object
-  const theme = Colors[colorScheme] ?? Colors.light;
-  return (
-    <View>
-      <Text>ThemedLogo</Text>
-    </View>
-  );
+  // swap light or dark logo
+  const logo = colorScheme === "dark" ? DarkLogo : LightLogo;
+  return <Image source={logo} />;
 };
 
 export default ThemedLogo;
