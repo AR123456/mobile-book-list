@@ -1,12 +1,7 @@
-import { View, useColorScheme } from "react-native";
-import { Colors } from "../constants/Colors";
+import { View } from "react-native";
 
-const Spacer = () => {
-  return (
-    <View>
-      <Text>Spacer</Text>
-    </View>
-  );
+const Spacer = ({ width = "100%", height = 40 }) => {
+  return <View style={{ width, height }} />;
 };
 
 export default Spacer;
