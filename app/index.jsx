@@ -1,7 +1,7 @@
 // home page of app
 import { StyleSheet, Text } from "react-native";
 import { Link } from "expo-router";
-import Logo from "../assets/img/logo_light.png";
+
 // import the themed view components
 import ThemedView from "../components/ThemedView";
 import ThemedLogo from "../components/ThemedLogo";
@@ -9,7 +9,7 @@ import ThemedLogo from "../components/ThemedLogo";
 const Home = () => {
   return (
     <ThemedView style={styles.container}>
-      <ThemedLogo style={styles.img}></ThemedLogo>
+      <ThemedLogo style={styles.img} />
       <Text style={styles.title}>The number 1</Text>
       <Text style={{ marginTop: 10, marginBottom: 30 }}>Reading List App</Text>
       <Link style={styles.link} href="/about">
