@@ -4,11 +4,12 @@ import { Link } from "expo-router";
 import Logo from "../assets/img/logo_light.png";
 // import the themed view components
 import ThemedView from "../components/ThemedView";
+import ThemedLogo from "../components/ThemedLogo";
 
 const Home = () => {
   return (
     <ThemedView style={styles.container}>
-      <Image source={Logo} style={styles.img}></Image>
+      <ThemedLogo style={styles.img}></ThemedLogo>
       <Text style={styles.title}>The number 1</Text>
       <Text style={{ marginTop: 10, marginBottom: 30 }}>Reading List App</Text>
       <Link style={styles.link} href="/about">

@@ -10,5 +10,3 @@ const ThemedLogo = () => {
 };
 
 export default ThemedLogo;
-
-const styles = StyleSheet.create({});
