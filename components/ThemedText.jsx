@@ -4,11 +4,9 @@ import { Color } from "../constants/Colors";
 const ThemedText = () => {
   const colorScheme = useColorScheme();
   const theme = Colors[colorScheme] ?? Colors.light;
-  return (
-    <View>
-      <Text>ThemedText</Text>
-    </View>
-  );
+  //
+  const textColor = title ? theme.title : theme.text;
+  return <Text style={[{ color: textColor }, style]} {...props} />;
 };
 
 export default ThemedText;
