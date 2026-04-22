@@ -14,6 +14,7 @@ const Home = () => {
       <Text style={styles.title}>The number 1</Text>
       <Spacer height={10} />
       <Text>Reading List App</Text>
+      <Spacer />
       <Link style={styles.link} href="/about">
         About Page
       </Link>
