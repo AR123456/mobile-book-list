@@ -12,7 +12,7 @@ const Home = () => {
     <ThemedView style={styles.container}>
       <ThemedLogo style={styles.img} />
       <Text style={styles.title}>The number 1</Text>
-      <Spacer />
+      <Spacer height={10} />
       <Text>Reading List App</Text>
       <Link style={styles.link} href="/about">
         About Page
