@@ -37,9 +37,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 18,
   },
-  img: {
-    marginVertical: 20,
-  },
+
   link: {
     marginVertical: 10,
     borderBottomWidth: 1,
