@@ -1,6 +1,6 @@
 import { Link } from "expo-router";
 import { StyleSheet } from "react-native";
-import { Colors } from "../constants/Colors";
+
 import ThemedView from "../components/ThemedView";
 
 import ThemedText from "../components/ThemedText";
