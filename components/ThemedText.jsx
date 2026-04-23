@@ -1,5 +1,5 @@
-import { View, useColorScheme } from "react-native";
-import { Color } from "../constants/Colors";
+import { Text, useColorScheme } from "react-native";
+import { Colors } from "../constants/Colors";
 //  in title property set to default of fals
 const ThemedText = ({ style, title = false, ...props }) => {
   // use hook to get users color scheme
