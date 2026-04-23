@@ -13,15 +13,17 @@ const Home = () => {
     <ThemedView style={styles.container}>
       <ThemedLogo />
       <Spacer height={20} />
-      <ThemedText style={styles.title}>The number 1</ThemedText>
+      <ThemedText style={styles.title} title={true}>
+        The number 1
+      </ThemedText>
       <Spacer height={10} />
-      <Text>Reading List App</Text>
+      <ThemedText>Reading List App</ThemedText>
       <Spacer />
       <Link style={styles.link} href="/about">
-        About Page
+        <ThemedText> About Page</ThemedText>
       </Link>
       <Link style={styles.link} href="/contact">
-        Contact Us
+        <ThemedText>Contact Us</ThemedText>
       </Link>
     </ThemedView>
   );
