@@ -8,7 +8,13 @@ import Spacer from "../../components/Spacer";
 const login = () => {
   return (
     <ThemedView style={styles.container}>
-      <Text>login</Text>
+      <Spacer />
+      <ThemedText title={true} style={styles.title}>
+        Login to Your Account
+      </ThemedText>
+      {/* link to register page  */}
+      <Spacer height={100} />
+      <Link href="/register">Register</Link>
     </ThemedView>
   );
 };
