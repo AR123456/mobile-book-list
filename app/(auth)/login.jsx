@@ -7,9 +7,9 @@ import Spacer from "../../components/Spacer";
 
 const login = () => {
   return (
-    <View>
+    <ThemedView style={styles.container}>
       <Text>login</Text>
-    </View>
+    </ThemedView>
   );
 };
 
