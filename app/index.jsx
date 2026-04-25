@@ -1,5 +1,5 @@
 // home page of app
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet } from "react-native";
 import { Link } from "expo-router";
 
 // import the themed view components
@@ -20,10 +20,10 @@ const Home = () => {
       <ThemedText>Reading List App</ThemedText>
       <Spacer />
       <Link style={styles.link} href="/login">
-        <ThemedText> Login </ThemedText>
+        <ThemedText>Login Page</ThemedText>
       </Link>
       <Link style={styles.link} href="/register">
-        <ThemedText>Register </ThemedText>
+        <ThemedText>Register Page</ThemedText>
       </Link>
     </ThemedView>
   );

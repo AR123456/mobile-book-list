@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import { Link } from "expo-router";
 // themed components
 import ThemedView from "../../components/ThemedView";
 import ThemedText from "../../components/ThemedText";
 import Spacer from "../../components/Spacer";
 
-const login = () => {
+const Login = () => {
   return (
     <ThemedView style={styles.container}>
       <Spacer />
@@ -15,13 +15,15 @@ const login = () => {
       {/* link to register page  */}
       <Spacer height={100} />
       <Link href="/register">
-        <ThemedText style={{ textAlign: "center" }}>Register</ThemedText>
+        <ThemedText style={{ textAlign: "center" }}>
+          Register instead
+        </ThemedText>
       </Link>
     </ThemedView>
   );
 };
 
-export default login;
+export default Login;
 
 const styles = StyleSheet.create({
   container: {
