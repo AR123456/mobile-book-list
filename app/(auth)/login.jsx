@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import { Link } from "expo-router";
-// themed components
+
 import ThemedView from "../../components/ThemedView";
 import ThemedText from "../../components/ThemedText";
 import Spacer from "../../components/Spacer";
@@ -12,9 +12,9 @@ const Login = () => {
       <ThemedText title={true} style={styles.title}>
         Login to Your Account
       </ThemedText>
-      {/* link to register page  */}
+
       <Spacer height={100} />
-      <Link href="/register">
+      <Link href="/register" replace>
         <ThemedText style={{ textAlign: "center" }}>
           Register instead
         </ThemedText>
