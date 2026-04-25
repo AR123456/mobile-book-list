@@ -12,11 +12,13 @@ export default function RootLayout() {
       <StatusBar value="auto" />
       <Stack
         screenOptions={{
-          headerTitleAlign: "center",
           headerStyle: { backgroundColor: theme.navBackground },
           headerTintColor: theme.title,
         }}
       >
+        {/* Groups */}
+        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+
         {/* Individual Screens */}
         <Stack.Screen name="index" options={{ title: "Home" }} />
       </Stack>
