@@ -1,4 +1,4 @@
-import { StyleSheet, Pressable } from "react-native";
+import { StyleSheet, Pressable, Text } from "react-native";
 import { Link } from "expo-router";
 import { Colors } from "../../constants/Colors";
 
@@ -15,7 +15,9 @@ const Login = () => {
       </ThemedText>
       <Pressable
         style={({ pressed }) => [styles.btn, pressed && styles.pressed]}
-      ></Pressable>
+      >
+        <Text style={{ color: "#f2f2f2" }}>Login</Text>
+      </Pressable>
       <Spacer height={100} />
       <Link href="/register" replace>
         <ThemedText style={{ textAlign: "center" }}>
