@@ -12,7 +12,9 @@ const Login = () => {
       <ThemedText title={true} style={styles.title}>
         Login to Your Account
       </ThemedText>
-      <Pressable style={{ pressed }}></Pressable>
+      <Pressable
+        style={({ pressed }) => [styles.btn, pressed && styles.pressed]}
+      ></Pressable>
       <Spacer height={100} />
       <Link href="/register" replace>
         <ThemedText style={{ textAlign: "center" }}>
