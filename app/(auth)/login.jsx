@@ -1,5 +1,6 @@
 import { StyleSheet, Pressable } from "react-native";
 import { Link } from "expo-router";
+import { Colors } from "../../constants/Colors";
 
 import ThemedView from "../../components/ThemedView";
 import ThemedText from "../../components/ThemedText";
@@ -36,5 +37,13 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 18,
     marginBottom: 30,
+  },
+  btn: {
+    backgroundColor: Colors.primary,
+    padding: 15,
+    borderRadius: 5,
+  },
+  pressed: {
+    opacity: 0.8,
   },
 });
