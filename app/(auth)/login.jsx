@@ -8,7 +8,7 @@ import Spacer from "../../components/Spacer";
 
 const Login = () => {
   const handleSubmit = () => {
-    console.log("pressed");
+    console.log("pressed login ");
   };
   return (
     <ThemedView style={styles.container}>
