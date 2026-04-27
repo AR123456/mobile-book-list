@@ -5,6 +5,7 @@ import { Colors } from "../../constants/Colors";
 import ThemedView from "../../components/ThemedView";
 import ThemedText from "../../components/ThemedText";
 import Spacer from "../../components/Spacer";
+import ThemedButton from "../../components/ThemedButton";
 
 const Login = () => {
   const handleSubmit = () => {
@@ -16,12 +17,9 @@ const Login = () => {
       <ThemedText title={true} style={styles.title}>
         Login to Your Account
       </ThemedText>
-      <Pressable
-        onPress={handleSubmit}
-        style={({ pressed }) => [styles.btn, pressed && styles.pressed]}
-      >
+      <ThemedButton onPress={handleSubmit}>
         <Text style={{ color: "#f2f2f2" }}>Login</Text>
-      </Pressable>
+      </ThemedButton>
       <Spacer height={100} />
       <Link href="/register" replace>
         <ThemedText style={{ textAlign: "center" }}>

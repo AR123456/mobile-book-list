@@ -7,7 +7,7 @@ function ThemedButton({ style, ...props }) {
     <Pressable
       style={({ pressed }) => [styles.btn, pressed && styles.pressed, style]}
       {...props}
-    ></Pressable>
+    />
   );
 }
 
