@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import Spacer from "../../components/Spacer";
 import ThemedView from "../../components/ThemedView";
 import ThemedText from "../../components/ThemedText";
@@ -6,10 +6,10 @@ import ThemedText from "../../components/ThemedText";
 const Books = () => {
   return (
     <ThemedView style={styles.container}>
+      <Spacer />
       <ThemedText title={true} style={styles.heading}>
         Reading list
       </ThemedText>
-      <Spacer />
     </ThemedView>
   );
 };
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "stretch",
   },
   heading: {
     fontWeight: "bold",
