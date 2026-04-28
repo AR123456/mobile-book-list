@@ -28,7 +28,6 @@ const Home = () => {
         <ThemedText>Register</ThemedText>
       </Link>
       <Link href="/profile" style={styles.link}>
-        {/* <Link href="/(dashboard)/profile" style={styles.link}> */}
         <ThemedText>Profile</ThemedText>
       </Link>
     </ThemedView>
