@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { Spacer } from "../../components/Spacer";
+import Spacer from "../../components/Spacer";
 import ThemedView from "../../components/ThemedView";
 import ThemedText from "../../components/ThemedText";
 

@@ -27,7 +27,7 @@ const Login = () => {
         </ThemedText>
       </Link>
       <Spacer height={100} />
-      <Link href="/home" replace>
+      <Link href="/" replace>
         <ThemedText style={{ textAlign: "center" }}>
           Home screen for now - not quite working but gets back home
         </ThemedText>
