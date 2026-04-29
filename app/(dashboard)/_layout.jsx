@@ -1,6 +1,7 @@
 import { Tabs } from "expo-router";
 import { useColorScheme } from "react-native";
 import { Colors } from "../../constants/Colors";
+import { Ionicons } from "@expo/vector-icons";
 
 const DashboardLayout = () => {
   const colorScheme = useColorScheme();
@@ -18,7 +19,13 @@ const DashboardLayout = () => {
         tabBarInactiveTintColor: theme.iconColor,
       }}
     >
-      <Tabs.Screen name="profile" options={{ title: "Profile" }} />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+          tabBarIcon: () => <Ionicons size={24} name="person" />,
+        }}
+      />
       <Tabs.Screen name="books" options={{ title: "Books" }} />
       <Tabs.Screen name="create" options={{ title: "Create" }} />
     </Tabs>
