@@ -14,6 +14,8 @@ const DashboardLayout = () => {
           paddingTop: 10,
           height: 90,
         },
+        tabBarActiveTintColor: theme.iconColorFocused,
+        tabBarInactiveTintColor: theme.iconColor,
       }}
     />
   );
