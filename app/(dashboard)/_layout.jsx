@@ -17,7 +17,9 @@ const DashboardLayout = () => {
         tabBarActiveTintColor: theme.iconColorFocused,
         tabBarInactiveTintColor: theme.iconColor,
       }}
-    />
+    >
+      <Tabs.Screen name="profile" options={{ title: "Profile" }} />
+    </Tabs>
   );
 };
 
