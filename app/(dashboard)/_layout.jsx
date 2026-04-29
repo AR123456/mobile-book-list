@@ -23,10 +23,28 @@ const DashboardLayout = () => {
         name="profile"
         options={{
           title: "Profile",
-          tabBarIcon: () => <Ionicons size={24} name="person" />,
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              size={24}
+              name={focused ? "person" : "person-outline"}
+              color={focused ? theme.iconColorFocused : theme.iconColor}
+            />
+          ),
         }}
       />
-      <Tabs.Screen name="books" options={{ title: "Books" }} />
+      <Tabs.Screen
+        name="books"
+        options={{
+          title: "Books",
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              size={24}
+              name={focused ? "book" : "book-outline"}
+              color={focused ? theme.iconColorFocused : theme.iconColor}
+            />
+          ),
+        }}
+      />
       <Tabs.Screen name="create" options={{ title: "Create" }} />
     </Tabs>
   );
