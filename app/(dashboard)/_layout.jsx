@@ -19,6 +19,8 @@ const DashboardLayout = () => {
       }}
     >
       <Tabs.Screen name="profile" options={{ title: "Profile" }} />
+      <Tabs.Screen name="books" options={{ title: "Books" }} />
+      <Tabs.Screen name="create" options={{ title: "Create" }} />
     </Tabs>
   );
 };
