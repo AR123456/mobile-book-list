@@ -49,13 +49,13 @@ const DashboardLayout = () => {
         name="create"
         options={{
           title: "Create",
-          tabBarIcon: ({ focused }) => {
+          tabBarIcon: ({ focused }) => (
             <Ionicons
               size={24}
               name={focused ? "create" : "create-outline"}
               color={focused ? theme.iconColorFocused : theme.iconColor}
-            />;
-          },
+            />
+          ),
         }}
       />
     </Tabs>
