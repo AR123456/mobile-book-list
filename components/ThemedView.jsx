@@ -1,7 +1,9 @@
 // custom light dark component
 import { View, useColorScheme } from "react-native";
 import { Colors } from "../constants/Colors";
-import { SafeAreaView } from "react-native-safe-area-context";
+// react area safe area context is less janky than safe view
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+
 // short cut way
 const ThemedView = ({ style, safe = false, ...props }) => {
   const colorScheme = useColorScheme();
@@ -12,8 +14,22 @@ const ThemedView = ({ style, safe = false, ...props }) => {
       // return array of styles
       <View style={[{ backgroundColor: theme.background }, style]} {...props} />
     );
+  // useSafeAreaINsets hook
+  const insets = useSafeAreaInsets();
   // what to return is we want safe mode safe = true
-  return "a safe thing ";
+  return (
+    <View
+      style={[
+        {
+          backgroundColor: theme.background,
+          paddingTop: insets.top,
+          paddingBottom: insets.bottom,
+        },
+        style,
+      ]}
+      {...props}
+    />
+  );
 };
 
 export default ThemedView;
