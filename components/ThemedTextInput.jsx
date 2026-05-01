@@ -1,4 +1,4 @@
-import { TextInput, useColorScheme, Text, View } from "react-native";
+import { TextInput, useColorScheme } from "react-native";
 import { Colors } from "../constants/Colors";
 
 const ThemedTextInput = ({ style, ...props }) => {
@@ -13,10 +13,10 @@ const ThemedTextInput = ({ style, ...props }) => {
           padding: 20,
           borderRadius: 6,
         },
+        style,
       ]}
-    >
-      <Text>ThemedTextInput</Text>
-    </TextInput>
+      {...props}
+    />
   );
 };
 
