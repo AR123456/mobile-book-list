@@ -18,7 +18,11 @@ const Login = () => {
       <ThemedText title={true} style={styles.title}>
         Login to Your Account
       </ThemedText>
-      <ThemedTextInput placeholder="Email" />
+      <ThemedTextInput
+        style={{ width: "80%", marginBottom: 20 }}
+        placeholder="Email"
+        // keyboardType="email-address"
+      />
       <ThemedButton onPress={handleSubmit}>
         <Text style={{ color: "#f2f2f2" }}>Login</Text>
       </ThemedButton>
