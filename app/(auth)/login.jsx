@@ -26,6 +26,7 @@ const Login = () => {
         placeholder="Email"
         keyboardType="email-address"
         onChangeText={setEmail}
+        value={email}
       />
       <ThemedButton onPress={handleSubmit}>
         <Text style={{ color: "#f2f2f2" }}>Login</Text>
