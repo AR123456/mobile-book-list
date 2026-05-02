@@ -7,8 +7,11 @@ import ThemedText from "../../components/ThemedText";
 import Spacer from "../../components/Spacer";
 import ThemedButton from "../../components/ThemedButton";
 import ThemedTextInput from "../../components/ThemedTextInput";
+import { useState } from "react";
 
 const Login = () => {
+  // getter setter for useState hook- inital state is empty string
+  const [email, setEmail] = useState("");
   const handleSubmit = () => {
     console.log("pressed login ");
   };
