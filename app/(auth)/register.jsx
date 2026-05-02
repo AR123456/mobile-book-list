@@ -1,16 +1,18 @@
 import { StyleSheet, Text } from "react-native";
 import { Link } from "expo-router";
 import { Colors } from "../../constants/Colors";
+import { useState } from "react";
 
 import ThemedView from "../../components/ThemedView";
 import ThemedText from "../../components/ThemedText";
 import Spacer from "../../components/Spacer";
 import ThemedButton from "../../components/ThemedButton";
 import ThemedTextInput from "../../components/ThemedTextInput";
-import { useState } from "react";
+
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const handleSubmit = () => {
     console.log("pressed register ");
   };
@@ -27,18 +29,13 @@ const Register = () => {
         onChangeText={setEmail}
         value={email}
       />
-      <ThemedTextInput
-        style={{ width: "80%", marginBottom: 20 }}
-        placeholder="Verify Email"
-        keyboardType="email-address"
-        onChangeText={setEmail}
-        value={email}
-      />
+
       <ThemedTextInput
         style={{ width: "80%", marginBottom: 20 }}
         placeholder="Password"
         onChangeText={setPassword}
         value={password}
+        secureTextEntry
       />
       <ThemedButton onPress={handleSubmit}>
         <Text style={{ color: "#f2f2f2" }}>Register</Text>
