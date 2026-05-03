@@ -1,4 +1,9 @@
-import { StyleSheet, Text, TextInput } from "react-native";
+import {
+  Keyboard,
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+} from "react-native";
 import { Link } from "expo-router";
 import { Colors } from "../../constants/Colors";
 
@@ -17,41 +22,43 @@ const Login = () => {
     console.log("pressed login ", email, password);
   };
   return (
-    <ThemedView style={styles.container}>
-      <Spacer />
-      <ThemedText title={true} style={styles.title}>
-        Login to Your Account
-      </ThemedText>
-      <ThemedTextInput
-        style={{ width: "80%", marginBottom: 20 }}
-        placeholder="Email"
-        keyboardType="email-address"
-        onChangeText={setEmail}
-        value={email}
-      />
-      <ThemedTextInput
-        style={{ width: "80%", marginBottom: 20 }}
-        placeholder="Password"
-        onChangeText={setPassword}
-        value={password}
-        secureTextEntry
-      />
-      <ThemedButton onPress={handleSubmit}>
-        <Text style={{ color: "#f2f2f2" }}>Login</Text>
-      </ThemedButton>
-      <Spacer height={100} />
-      <Link href="/register" replace>
-        <ThemedText style={{ textAlign: "center" }}>
-          Register instead
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <ThemedView style={styles.container}>
+        <Spacer />
+        <ThemedText title={true} style={styles.title}>
+          Login to Your Account
         </ThemedText>
-      </Link>
-      <Spacer height={100} />
-      <Link href="/" replace>
-        <ThemedText style={{ textAlign: "center" }}>
-          Home screen for now - not quite working but gets back home
-        </ThemedText>
-      </Link>
-    </ThemedView>
+        <ThemedTextInput
+          style={{ width: "80%", marginBottom: 20 }}
+          placeholder="Email"
+          keyboardType="email-address"
+          onChangeText={setEmail}
+          value={email}
+        />
+        <ThemedTextInput
+          style={{ width: "80%", marginBottom: 20 }}
+          placeholder="Password"
+          onChangeText={setPassword}
+          value={password}
+          secureTextEntry
+        />
+        <ThemedButton onPress={handleSubmit}>
+          <Text style={{ color: "#f2f2f2" }}>Login</Text>
+        </ThemedButton>
+        <Spacer height={100} />
+        <Link href="/register" replace>
+          <ThemedText style={{ textAlign: "center" }}>
+            Register instead
+          </ThemedText>
+        </Link>
+        <Spacer height={100} />
+        <Link href="/" replace>
+          <ThemedText style={{ textAlign: "center" }}>
+            Home screen for now - not quite working but gets back home
+          </ThemedText>
+        </Link>
+      </ThemedView>
+    </TouchableWithoutFeedback>
   );
 };
 
