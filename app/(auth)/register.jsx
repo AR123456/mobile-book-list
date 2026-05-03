@@ -14,7 +14,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
 
   const handleSubmit = () => {
-    console.log("pressed register ");
+    console.log("pressed register ", email, password);
   };
   return (
     <ThemedView style={styles.container}>

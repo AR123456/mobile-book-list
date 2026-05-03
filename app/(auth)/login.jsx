@@ -12,8 +12,9 @@ import { useState } from "react";
 const Login = () => {
   // getter setter for useState hook- inital state is empty string
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const handleSubmit = () => {
-    console.log("pressed login ");
+    console.log("pressed login ", email, password);
   };
   return (
     <ThemedView style={styles.container}>
@@ -27,6 +28,13 @@ const Login = () => {
         keyboardType="email-address"
         onChangeText={setEmail}
         value={email}
+      />
+      <ThemedTextInput
+        style={{ width: "80%", marginBottom: 20 }}
+        placeholder="Password"
+        onChangeText={setPassword}
+        value={password}
+        secureTextEntry
       />
       <ThemedButton onPress={handleSubmit}>
         <Text style={{ color: "#f2f2f2" }}>Login</Text>
