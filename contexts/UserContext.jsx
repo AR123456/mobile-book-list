@@ -10,7 +10,7 @@ export function UserProvider({ children }) {
   async function login(email, password) {}
   async function register(email, password) {}
   async function logout() {}
-  //   return the user context and the built in provider context( which supplies values)
+  //   return template the user context and the built in provider context( which supplies values to components it wraps)
   return (
     <UserContext.Provider value={{ user, login, register, logout }}>
       {children}

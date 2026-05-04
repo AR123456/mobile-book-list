@@ -15,7 +15,7 @@ import ThemedTextInput from "../../components/ThemedTextInput";
 import { useState } from "react";
 
 const Login = () => {
-  // getter setter for useState hook- inital state is empty string
+  // getter setter for useState hook- initial state is empty string
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = () => {
