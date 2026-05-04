@@ -2,7 +2,7 @@ import { Stack } from "expo-router";
 import { Colors } from "../constants/Colors";
 import { useColorScheme } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { UserProvider } from "../../contexts/UserContext";
+import { UserProvider } from "../contexts/UserContext";
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();

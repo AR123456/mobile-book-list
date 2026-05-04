@@ -5,7 +5,7 @@ export const UserContext = createContext();
 // provider component to track state for the context
 export function UserProvider({ children }) {
   // user getter setter
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(null);
   // functions to update or mutate that state
   async function login(email, password) {}
   async function register(email, password) {}
