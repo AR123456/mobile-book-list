@@ -13,12 +13,15 @@ import Spacer from "../../components/Spacer";
 import ThemedButton from "../../components/ThemedButton";
 import ThemedTextInput from "../../components/ThemedTextInput";
 import { useState } from "react";
+import { useUser } from "../../hooks/useUser";
 
 const Login = () => {
   // getter setter for useState hook- initial state is empty string
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { user } = useUser();
   const handleSubmit = () => {
+    console.log("current user value", user);
     console.log("pressed login ", email, password);
   };
   return (
