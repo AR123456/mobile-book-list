@@ -7,6 +7,7 @@ import {
 import { Link } from "expo-router";
 import { Colors } from "../../constants/Colors";
 import { useState } from "react";
+import { useUser } from "../../hooks/useUser";
 
 import ThemedView from "../../components/ThemedView";
 import ThemedText from "../../components/ThemedText";
@@ -17,6 +18,7 @@ import ThemedTextInput from "../../components/ThemedTextInput";
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { user, register } = useUser();
 
   const handleSubmit = () => {
     console.log("pressed register ", email, password);
