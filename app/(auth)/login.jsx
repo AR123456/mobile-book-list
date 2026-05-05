@@ -7,7 +7,7 @@ import {
 import { Link } from "expo-router";
 import { Colors } from "../../constants/Colors";
 import { useState } from "react";
-import { login } from "../../hooks/useUser";
+import { useUser } from "../../hooks/useUser";
 
 import ThemedView from "../../components/ThemedView";
 import ThemedText from "../../components/ThemedText";
