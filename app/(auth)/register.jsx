@@ -20,8 +20,13 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const { user, register } = useUser();
 
-  const handleSubmit = () => {
-    console.log("pressed register ", email, password);
+  const handleSubmit = async () => {
+    try {
+      await register(email, password);
+      console.log("current user is ", user);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
