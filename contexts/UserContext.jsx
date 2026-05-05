@@ -19,7 +19,7 @@ export function UserProvider({ children }) {
       // setter
       setUser(response);
     } catch (error) {
-      console.log(error.message);
+      throw Error(error.message);
     }
   }
   // getting email and password form the input fields on the forms
@@ -31,7 +31,7 @@ export function UserProvider({ children }) {
       await login(email, password);
     } catch (error) {
       // err from app wright "back end"
-      console.log(error.message);
+      throw Error(error.message);
     }
   }
   async function logout() {}

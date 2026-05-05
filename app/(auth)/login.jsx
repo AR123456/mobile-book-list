@@ -19,15 +19,18 @@ const Login = () => {
   // getter setter for useState hook- initial state is empty string
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // state for err coming from appright
+  const [error, setError] = useState(null);
   const { user, login } = useUser();
+
   const handleSubmit = async () => {
-    // console.log("current user value", user);
-    // console.log("pressed login ", email, password);
+    // re set err so if not new user can go on
+    setError(null);
     try {
       await login(email, password);
-      console.log("current user is: ", user);
+      // console.log("current user is: ", user);
     } catch (error) {
-      console.log(error);
+      setError(error.message);
     }
   };
   return (
@@ -55,6 +58,8 @@ const Login = () => {
           <Text style={{ color: "#f2f2f2" }}>Login</Text>
         </ThemedButton>
         <Spacer height={100} />
+        {/* if the error is not null output it */}
+        {error && <Text style={styles.error}>{error}</Text>}
         <Link href="/register" replace>
           <ThemedText style={{ textAlign: "center" }}>
             Register instead
