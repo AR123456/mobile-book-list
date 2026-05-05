@@ -30,6 +30,7 @@ export function UserProvider({ children }) {
       // log the newly created user in
       await login(email, password);
     } catch (error) {
+      // err from app wright "back end"
       console.log(error.message);
     }
   }
