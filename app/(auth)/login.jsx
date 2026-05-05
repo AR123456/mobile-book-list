@@ -6,23 +6,29 @@ import {
 } from "react-native";
 import { Link } from "expo-router";
 import { Colors } from "../../constants/Colors";
+import { useState } from "react";
+import { login } from "../../hooks/useUser";
 
 import ThemedView from "../../components/ThemedView";
 import ThemedText from "../../components/ThemedText";
 import Spacer from "../../components/Spacer";
 import ThemedButton from "../../components/ThemedButton";
 import ThemedTextInput from "../../components/ThemedTextInput";
-import { useState } from "react";
-import { useUser } from "../../hooks/useUser";
 
 const Login = () => {
   // getter setter for useState hook- initial state is empty string
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { user } = useUser();
-  const handleSubmit = () => {
-    console.log("current user value", user);
-    console.log("pressed login ", email, password);
+  const { user, login } = useUser();
+  const handleSubmit = async () => {
+    // console.log("current user value", user);
+    // console.log("pressed login ", email, password);
+    try {
+      await login(email, password);
+      console.log("current user is: ", user);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
