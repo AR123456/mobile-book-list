@@ -18,13 +18,17 @@ import ThemedTextInput from "../../components/ThemedTextInput";
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // state for err coming from appright
+  const [error, setError] = useState(null);
   const { register } = useUser();
 
   const handleSubmit = async () => {
+    // re set err so if not new user can go on
+    setError(null);
     try {
       await register(email, password);
     } catch (error) {
-      console.log(error);
+      setError(error.message);
     }
   };
   return (
@@ -53,6 +57,8 @@ const Register = () => {
           <Text style={{ color: "#f2f2f2" }}>Register</Text>
         </ThemedButton>
         <Spacer height={100} />
+        {/* if the error is not null output it */}
+        {error && <Text style={styles.error}>{error}</Text>}
         <Link href="/login" replace>
           <ThemedText style={{ textAlign: "center" }}>Login instead</ThemedText>
         </Link>
@@ -81,5 +87,14 @@ const styles = StyleSheet.create({
   },
   pressed: {
     opacity: 0.8,
+  },
+  error: {
+    color: Colors.warning,
+    padding: 10,
+    backgroundColor: "#f5c1c8",
+    borderColor: Colors.warning,
+    borderWidth: 1,
+    borderRadius: 6,
+    marginHorizontal: 10,
   },
 });
