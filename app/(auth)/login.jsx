@@ -97,4 +97,13 @@ const styles = StyleSheet.create({
   pressed: {
     opacity: 0.8,
   },
+  error: {
+    color: Colors.warning,
+    padding: 10,
+    backgroundColor: "#f5c1c8",
+    borderColor: Colors.warning,
+    borderWidth: 1,
+    borderRadius: 6,
+    marginHorizontal: 10,
+  },
 });
