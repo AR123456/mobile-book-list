@@ -1,10 +1,10 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { account } from "../lib/appwrite";
 import { ID } from "react-native-appwrite";
 
 export const UserContext = createContext();
 
-// provider component to track state for the context
+// provider component to track state for the context-wrapps app so runs on load
 export function UserProvider({ children }) {
   const [user, setUser] = useState(null);
   // functions to update or mutate that state
@@ -12,7 +12,7 @@ export function UserProvider({ children }) {
     try {
       // create session
       await account.createEmailPasswordSession(email, password);
-      // get the created session from server
+      // get the created session from appwright
       const response = await account.get();
       // setter
       setUser(response);
@@ -36,7 +36,9 @@ export function UserProvider({ children }) {
     await account.deleteSession("current");
     setUser(null);
   }
-
+  useEffect(() => {
+    // this will fire when the app starts
+  }, []);
   //   return template the user context and the built in provider context( which supplies values to components it wraps)
   return (
     <UserContext.Provider value={{ user, login, register, logout }}>
