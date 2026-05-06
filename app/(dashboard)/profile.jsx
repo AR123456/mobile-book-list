@@ -1,12 +1,14 @@
 import { StyleSheet } from "react-native";
+import { useUser } from "../../hooks/useUser";
+
 import Spacer from "../../components/Spacer";
 import ThemedView from "../../components/ThemedView";
 import ThemedText from "../../components/ThemedText";
 import ThemedButton from "../../components/ThemedButton";
-import { useUser } from "../../hooks/useUser";
 
 const Profile = () => {
-  const { user, logout } = useUser();
+  // have an err cannot call class from function- seems to run logout when profile page is loaded
+  const { logout } = useUser();
   return (
     <ThemedView style={styles.container}>
       <ThemedText title={true} style={styles.heading}>
@@ -15,10 +17,9 @@ const Profile = () => {
       <Spacer />
       <ThemedText>Time to read some books!</ThemedText>
       <Spacer />
-      <ThemedButton onPress={logout()}>
-        <Text style={{ color: "#f2f2f2" }}>Login</Text>
+      <ThemedButton onPress={logout} style={styles.button}>
+        <Text style={{ color: "#f2f2f2" }}>Logout</Text>
       </ThemedButton>
-      <Spacer />
     </ThemedView>
   );
 };

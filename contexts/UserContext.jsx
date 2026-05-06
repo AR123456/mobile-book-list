@@ -33,9 +33,10 @@ export function UserProvider({ children }) {
     }
   }
   async function logout() {
-    // deleteSession from appwrite
-    await account.deleteSession();
+    await account.deleteSession("current");
+    setUser(null);
   }
+
   //   return template the user context and the built in provider context( which supplies values to components it wraps)
   return (
     <UserContext.Provider value={{ user, login, register, logout }}>
