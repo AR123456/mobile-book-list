@@ -1,13 +1,11 @@
 import { createContext, useState } from "react";
 import { account } from "../lib/appwrite";
-// generate ids for unique user accounts
 import { ID } from "react-native-appwrite";
 
 export const UserContext = createContext();
 
 // provider component to track state for the context
 export function UserProvider({ children }) {
-  // user getter setter
   const [user, setUser] = useState(null);
   // functions to update or mutate that state
   async function login(email, password) {
@@ -34,7 +32,10 @@ export function UserProvider({ children }) {
       throw Error(error.message);
     }
   }
-  async function logout() {}
+  async function logout() {
+    // deleteSession from appwrite
+    await account.deleteSession();
+  }
   //   return template the user context and the built in provider context( which supplies values to components it wraps)
   return (
     <UserContext.Provider value={{ user, login, register, logout }}>
