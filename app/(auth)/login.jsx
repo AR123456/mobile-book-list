@@ -14,6 +14,7 @@ import ThemedText from "../../components/ThemedText";
 import Spacer from "../../components/Spacer";
 import ThemedButton from "../../components/ThemedButton";
 import ThemedTextInput from "../../components/ThemedTextInput";
+import { ActivityIndicator } from "react-native/types_generated/index";
 
 const Login = () => {
   // getter setter for useState hook- initial state is empty string
@@ -66,11 +67,7 @@ const Login = () => {
           </ThemedText>
         </Link>
         <Spacer height={100} />
-        <Link href="/" replace>
-          <ThemedText style={{ textAlign: "center" }}>
-            Home screen for now - not quite working but gets back home
-          </ThemedText>
-        </Link>
+        <ActivityIndicator></ActivityIndicator>
       </ThemedView>
     </TouchableWithoutFeedback>
   );
