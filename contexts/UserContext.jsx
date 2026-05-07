@@ -1,7 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { account } from "../lib/appwrite";
 import { ID } from "react-native-appwrite";
-import { setPublicInstanceForReactNativeDocumentElementInstanceHandle } from "react-native/types_generated/src/private/webapis/dom/nodes/internals/ReactNativeDocumentElementInstanceHandle";
 
 export const UserContext = createContext();
 
@@ -41,9 +40,9 @@ export function UserProvider({ children }) {
   async function getInitialUserValue() {
     //getting this from appwrite
     try {
-      const response = await account.get();
+      const res = await account.get();
       // user session object comes back
-      setUser(response);
+      setUser(res);
     } catch (error) {
       setUser(null);
     } finally {

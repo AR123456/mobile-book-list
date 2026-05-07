@@ -8,16 +8,16 @@ import ThemedButton from "../../components/ThemedButton";
 
 const Profile = () => {
   // have an err cannot call class from function- seems to run logout when profile page is loaded
-  const { logout } = useUser();
+  const { logout, user } = useUser();
   return (
     <ThemedView style={styles.container}>
       <ThemedText title={true} style={styles.heading}>
-        Your Email
+        {user.email}
       </ThemedText>
       <Spacer />
       <ThemedText>Time to read some books!</ThemedText>
       <Spacer />
-      <ThemedButton onPress={logout} style={styles.button}>
+      <ThemedButton onPress={() => logout()} style={styles.button}>
         <Text style={{ color: "#f2f2f2" }}>Logout</Text>
       </ThemedButton>
     </ThemedView>
