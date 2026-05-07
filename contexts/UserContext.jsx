@@ -1,12 +1,14 @@
 import { createContext, useEffect, useState } from "react";
 import { account } from "../lib/appwrite";
 import { ID } from "react-native-appwrite";
+import { setPublicInstanceForReactNativeDocumentElementInstanceHandle } from "react-native/types_generated/src/private/webapis/dom/nodes/internals/ReactNativeDocumentElementInstanceHandle";
 
 export const UserContext = createContext();
 
 // provider component to track state for the context-wrapps app so runs on load
 export function UserProvider({ children }) {
   const [user, setUser] = useState(null);
+  const [authChecked, setAuthChecked] = useState(false);
   // functions to update or mutate that state
   async function login(email, password) {
     try {
@@ -44,10 +46,12 @@ export function UserProvider({ children }) {
       setUser(response);
     } catch (error) {
       setUser(null);
+    } finally {
     }
   }
   useEffect(() => {
     // this will fire when the app starts
+    getInitialUserValue();
   }, []);
   //   return template the user context and the built in provider context( which supplies values to components it wraps)
   return (
