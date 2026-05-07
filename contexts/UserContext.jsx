@@ -47,6 +47,7 @@ export function UserProvider({ children }) {
     } catch (error) {
       setUser(null);
     } finally {
+      setAuthChecked(true);
     }
   }
   useEffect(() => {
@@ -55,7 +56,9 @@ export function UserProvider({ children }) {
   }, []);
   //   return template the user context and the built in provider context( which supplies values to components it wraps)
   return (
-    <UserContext.Provider value={{ user, login, register, logout }}>
+    <UserContext.Provider
+      value={{ user, login, register, logout, authChecked }}
+    >
       {children}
     </UserContext.Provider>
   );
