@@ -36,6 +36,16 @@ export function UserProvider({ children }) {
     await account.deleteSession("current");
     setUser(null);
   }
+  async function getInitialUserValue() {
+    //getting this from appwrite
+    try {
+      const response = await account.get();
+      // user session object comes back
+      setUser(response);
+    } catch (error) {
+      setUser(null);
+    }
+  }
   useEffect(() => {
     // this will fire when the app starts
   }, []);
