@@ -7,7 +7,9 @@ const UserOnly = ({ children }) => {
   // getting this hook for appwrite expo router package - can redirect
   const router = useRouter();
   useEffect(() => {
-    //
+    if (authChecked && user == null) {
+      // no user so re direct
+    }
   }, [user, authChecked]);
 };
 
