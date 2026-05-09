@@ -12,7 +12,7 @@ const UserOnly = ({ children }) => {
       router.replace("./login");
     }
   }, [user, authChecked]);
-  // add condition still waiting
+  // add condition still waiting or no user logged in
   if (!authChecked || !user) {
     return <Text>Loading</Text>;
   }
