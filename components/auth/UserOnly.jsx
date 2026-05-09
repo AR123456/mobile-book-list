@@ -1,22 +1,22 @@
 import { useRouter } from "expo-router";
 import { useUser } from "../../hooks/useUser";
 import { Text } from "react-native";
-import { useEffect } from "react";
+
+// destructure children to use in template
 const UserOnly = ({ children }) => {
   const { user, authChecked } = useUser();
+  // getting this hook for appwrite expo router package - can redirect
   const router = useRouter();
-
   useEffect(() => {
     if (authChecked && user === null) {
-      router.replace("/login");
+      // no user so re direct, replace removes prior screen from history stack so users back button will not navigate back
+      router.replace("./login");
     }
   }, [user, authChecked]);
-
-  // show loader while we wait for auth to be checked, or while redirecting if user becomes null
+  // add condition still waiting or no user logged in
   if (!authChecked || !user) {
     return <Text>Loading</Text>;
   }
-
   return children;
 };
 
