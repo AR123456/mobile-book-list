@@ -8,7 +8,8 @@ const UserOnly = ({ children }) => {
   const router = useRouter();
   useEffect(() => {
     if (authChecked && user == null) {
-      // no user so re direct
+      // no user so re direct, replace removes prior screen from history stack so users back button will not navigate back
+      router.replace("./login");
     }
   }, [user, authChecked]);
 };
