@@ -5,9 +5,8 @@ import { Text } from "react-native";
 import { useEffect } from "react";
 
 const GuestOnly = ({ children }) => {
-  // getter setter
   const { user, authChecked } = useUser();
-  // ref the router
+
   const router = useRouter();
   // useEffect to return when we have a guest
   useEffect(() => {
@@ -22,3 +21,4 @@ const GuestOnly = ({ children }) => {
 };
 
 export default GuestOnly;
+// this one goes in the auth group layout, not the dash layout
