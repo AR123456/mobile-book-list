@@ -10,6 +10,11 @@ const GuestOnly = ({ children }) => {
   const router = useRouter();
   // useEffect to return when we have a guest
   useEffect(() => {
-    //
-  }, [UserActivation, authChecked]);
+    if (authChecked && user) {
+      router.replace("/profile");
+    }
+  }, [user, authChecked]);
+  return children;
 };
+
+export default GuestOnly;
