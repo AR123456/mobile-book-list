@@ -67,7 +67,7 @@ const Login = () => {
           </ThemedText>
         </Link>
         <Spacer height={100} />
-        <ActivityIndicator></ActivityIndicator>
+        <ActivityIndicator size="large" color="white"></ActivityIndicator>
       </ThemedView>
     </TouchableWithoutFeedback>
   );
