@@ -15,6 +15,7 @@ import ThemedText from "../../components/ThemedText";
 import Spacer from "../../components/Spacer";
 import ThemedButton from "../../components/ThemedButton";
 import ThemedTextInput from "../../components/ThemedTextInput";
+import ThemedLoader from "../../components/ThemedLoader";
 
 const Login = () => {
   // getter setter for useState hook- initial state is empty string
@@ -67,7 +68,8 @@ const Login = () => {
           </ThemedText>
         </Link>
         <Spacer height={100} />
-        <ActivityIndicator size="large" color="white"></ActivityIndicator>
+        {/* <ActivityIndicator size="large" color="white"></ActivityIndicator> */}
+        <ThemedLoader />
       </ThemedView>
     </TouchableWithoutFeedback>
   );
