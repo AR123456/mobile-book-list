@@ -3,6 +3,7 @@ import {
   StyleSheet,
   Text,
   TouchableWithoutFeedback,
+  ActivityIndicator,
 } from "react-native";
 import { Link } from "expo-router";
 import { Colors } from "../../constants/Colors";
@@ -66,6 +67,7 @@ const Login = () => {
           </ThemedText>
         </Link>
         <Spacer height={100} />
+        <ActivityIndicator></ActivityIndicator>
       </ThemedView>
     </TouchableWithoutFeedback>
   );
