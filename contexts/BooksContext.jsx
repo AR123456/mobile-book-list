@@ -10,19 +10,19 @@ export function BooksProvider({ children }) {
       console.error(error.message);
     }
   }
-  async function fetchBookById() {
+  async function fetchBookById(id) {
     try {
     } catch (error) {
       console.error(error.message);
     }
   }
-  async function createBook() {
+  async function createBook(data) {
     try {
     } catch (error) {
       console.error(error.message);
     }
   }
-  async function deleteBook() {
+  async function deleteBook(id) {
     try {
     } catch (error) {
       console.error(error.message);
@@ -34,4 +34,18 @@ export function BooksProvider({ children }) {
       console.error(error.message);
     }
   }
+  return (
+    <BooksContext.Provider
+      value={{
+        books,
+        fetchBooks,
+        fetchBookById,
+        createBook,
+        deleteBook,
+        updateBook,
+      }}
+    >
+      {children}
+    </BooksContext.Provider>
+  );
 }
