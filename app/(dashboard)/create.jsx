@@ -24,11 +24,22 @@ const Create = () => {
   const { createBook } = useBooks();
   // expo router
   const router = useRouter();
+
   async function handleSubmit() {
     // check for missing stuff
     if (!title.trim() || !author.trim() || !description.trim()) return;
+    //else
     setLoading(true);
     // create book
+    await createBook({ title, author, description });
+    // reset fields
+    setTitle("");
+    setAuthor("");
+    setDescription("");
+    // redirect to the books page
+    router.replace("/books");
+    // remove spinning loader
+    setLoading(false);
   }
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
