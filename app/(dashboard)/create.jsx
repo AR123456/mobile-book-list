@@ -24,7 +24,12 @@ const Create = () => {
   const { createBook } = useBooks();
   // expo router
   const router = useRouter();
-  async function handleSubmit() {}
+  async function handleSubmit() {
+    // check for missing stuff
+    if (!title.trim() || !author.trim() || !description.trim()) return;
+    setLoading(true);
+    // create book
+  }
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ThemedView style={styles.container}>
