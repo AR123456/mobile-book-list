@@ -24,6 +24,7 @@ const Create = () => {
   const { createBook } = useBooks();
   // expo router
   const router = useRouter();
+  async function handleSubmit() {}
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ThemedView style={styles.container}>
@@ -52,5 +53,18 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 18,
     textAlign: "center",
+  },
+  input: {
+    padding: 20,
+    borderRadius: 6,
+    alignSelf: "stretch",
+    marginHorizontal: 40,
+  },
+  multiline: {
+    padding: 20,
+    borderRadius: 6,
+    minHeight: 100,
+    alignSelf: "stretch",
+    marginHorizontal: 40,
   },
 });
