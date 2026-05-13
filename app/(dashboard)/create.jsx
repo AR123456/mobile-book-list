@@ -20,7 +20,10 @@ const Create = () => {
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState("");
-
+  // custom hook
+  const { createBook } = useBooks();
+  // expo router
+  const router = useRouter();
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ThemedView style={styles.container}>
