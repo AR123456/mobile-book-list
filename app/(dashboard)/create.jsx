@@ -16,12 +16,18 @@ import Spacer from "../../components/Spacer";
 
 const Create = () => {
   return (
-    <ThemedView style={styles.container}>
-      <ThemedText title={true} style={styles.heading}>
-        Add a New Book
-      </ThemedText>
-      <Spacer />
-    </ThemedView>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <ThemedView style={styles.container}>
+        <ThemedText title={true} style={styles.heading}>
+          Add a New Book
+        </ThemedText>
+        <Spacer />
+        {/* Title */}
+        {/* Author */}
+        {/* description */}
+        {/* submit buttion  */}
+      </ThemedView>
+    </TouchableWithoutFeedback>
   );
 };
 
