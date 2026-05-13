@@ -1,7 +1,18 @@
-import { StyleSheet } from "react-native";
-import Spacer from "../../components/Spacer";
+import {
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from "react-native";
+import { useBooks } from "../../hooks/useBooks";
+import { useRouter } from "expo-router";
+import { useState } from "react";
+// themed components
 import ThemedView from "../../components/ThemedView";
 import ThemedText from "../../components/ThemedText";
+import ThemedTextInput from "../../components/ThemedTextInput";
+import ThemedButton from "../../components/ThemedButton";
+import Spacer from "../../components/Spacer";
 
 const Create = () => {
   return (
