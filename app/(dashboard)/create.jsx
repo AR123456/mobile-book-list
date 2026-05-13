@@ -15,6 +15,12 @@ import ThemedButton from "../../components/ThemedButton";
 import Spacer from "../../components/Spacer";
 
 const Create = () => {
+  // getters setters for state of each input item
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [description, setDescription] = useState("");
+  const [loading, setLoading] = useState("");
+
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ThemedView style={styles.container}>
