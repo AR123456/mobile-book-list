@@ -49,9 +49,18 @@ const Create = () => {
         </ThemedText>
         <Spacer />
         {/* Title */}
+        <ThemedTextInput />
+        <Spacer />
         {/* Author */}
+        <ThemedTextInput />
+        <Spacer />
         {/* description */}
+        <ThemedTextInput />
+        <Spacer />
         {/* submit buttion  */}
+        <ThemedButton>
+          <Text>{loading ? "Saving..." : "Create Book"}</Text>
+        </ThemedButton>
       </ThemedView>
     </TouchableWithoutFeedback>
   );
