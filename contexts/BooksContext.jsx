@@ -9,6 +9,7 @@ export const BooksContext = createContext();
 export function BooksProvider({ children }) {
   const [books, setBooks] = useState([]);
   const { user } = useUser();
+
   async function fetchBooks() {
     try {
     } catch (error) {
@@ -23,14 +24,17 @@ export function BooksProvider({ children }) {
   }
   async function createBook(data) {
     try {
-      await databases.createRow(
+      // await databases.createRow(
+      await databases.createDocument(
         DATABASE_ID,
         TABLE_ID, // Formerly collectionId
         ID.unique(),
         { ...data, userId: user.$id },
-        [Permission.read(Role.user(user.$id))],
-        Permission.update(Role.user(user.$id)),
-        Permission.delete(Role.user(user.$id)),
+        [
+          Permission.read(Role.user(user.$id)),
+          Permission.update(Role.user(user.$id)),
+          Permission.delete(Role.user(user.$id)),
+        ],
       );
     } catch (error) {
       console.error(error.message);
