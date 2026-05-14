@@ -73,9 +73,11 @@ const Create = () => {
           multiline={true}
         />
         <Spacer />
-        {/* submit buttion  */}
-        <ThemedButton>
-          <Text>{loading ? "Saving..." : "Create Book"}</Text>
+        {/* submit button  */}
+        <ThemedButton onPress={handleSubmit} disable={loading}>
+          <Text style={{ color: "#fff" }}>
+            {loading ? "Saving..." : "Create Book"}
+          </Text>
         </ThemedButton>
       </ThemedView>
     </TouchableWithoutFeedback>
