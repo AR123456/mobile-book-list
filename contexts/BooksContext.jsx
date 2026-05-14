@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 
 import { databases, DATABASE_ID, TABLE_ID } from "../lib/appwrite";
-import { Permission, Role, ID } from "react-native-appwrite";
+import { Permission, Role, ID, Query } from "react-native-appwrite";
 import { useUser } from "../hooks/useUser";
 
 export const BooksContext = createContext();
@@ -12,6 +12,11 @@ export function BooksProvider({ children }) {
 
   async function fetchBooks() {
     try {
+      const response = await databases.listDocuments(DATABASE_ID, TABLE_ID, [
+        Query.equal("userId", user.$id),
+      ]);
+      setBooks(response.documents);
+      console.log(response.documents);
     } catch (error) {
       console.error(error.message);
     }
