@@ -49,13 +49,29 @@ const Create = () => {
         </ThemedText>
         <Spacer />
         {/* Title */}
-        <ThemedTextInput />
+        <ThemedTextInput
+          style={styles.input}
+          placeholder="Book title"
+          value={title}
+          onChangeText={setTitle}
+        />
         <Spacer />
         {/* Author */}
-        <ThemedTextInput />
+        <ThemedTextInput
+          style={styles.input}
+          placeholder="Book author"
+          value={author}
+          onChangeText={setAuthor}
+        />
         <Spacer />
         {/* description */}
-        <ThemedTextInput />
+        <ThemedTextInput
+          style={styles.multiline}
+          placeholder="Book description"
+          value={description}
+          onChangeText={setDescription}
+          multiline={true}
+        />
         <Spacer />
         {/* submit buttion  */}
         <ThemedButton>
