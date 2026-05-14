@@ -20,7 +20,7 @@ const Create = () => {
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState("");
-  // custom hook
+  // coming from BooksContext.jsx
   const { createBook } = useBooks();
   // expo router
   const router = useRouter();
