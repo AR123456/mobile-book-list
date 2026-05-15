@@ -16,7 +16,19 @@ const Books = () => {
         Reading list
       </ThemedText>
       <Spacer />
-      <FlatList data={books} />
+      <FlatList
+        data={books}
+        keyExtractor={(item) => item.$id}
+        contentContainerStyle={styles.list}
+        renderItem={({ item }) => (
+          <Pressable>
+            <ThemedCard>
+              <ThemedText>{item.title}</ThemedText>
+              <ThemedText>{item.author}</ThemedText>
+            </ThemedCard>
+          </Pressable>
+        )}
+      />
     </ThemedView>
   );
 };
