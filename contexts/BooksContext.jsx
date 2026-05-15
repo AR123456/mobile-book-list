@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 import { databases, DATABASE_ID, TABLE_ID } from "../lib/appwrite";
 import { Permission, Role, ID, Query } from "react-native-appwrite";
@@ -57,6 +57,10 @@ export function BooksProvider({ children }) {
       console.error(error.message);
     }
   }
+  // run the getBooks function
+  useEffect(() => {
+    //
+  }, [user]);
   return (
     <BooksContext.Provider
       value={{
