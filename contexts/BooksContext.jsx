@@ -59,7 +59,13 @@ export function BooksProvider({ children }) {
   }
   // run the getBooks function
   useEffect(() => {
-    //
+    //when user logs in get books , clear them when they log out
+    if (user) {
+      fetchBooks();
+    } else {
+      //
+      setBooks([]);
+    }
   }, [user]);
   return (
     <BooksContext.Provider
