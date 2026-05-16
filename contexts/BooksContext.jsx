@@ -61,9 +61,11 @@ export function BooksProvider({ children }) {
   useEffect(() => {
     let unsubscribe;
     // set up appwrite channel to listen to - this may need to be .table
-    const channel = `databases.${DATABASE_ID}.collections.${TABLE_ID}.documents `;
+    const channel = `databases.${DATABASE_ID}.collections.${TABLE_ID}.documents`;
     if (user) {
+      // only fetch the data if the user is authenticated
       fetchBooks();
+      unsubscribe = client.subscribe(channel, () => {});
     } else {
       //
       setBooks([]);
