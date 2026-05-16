@@ -29,7 +29,7 @@ export function BooksProvider({ children }) {
   }
   async function createBook(data) {
     try {
-      // await databases.createRow(
+      //  could update state here but opting for real time data instead
       await databases.createDocument(
         DATABASE_ID,
         TABLE_ID, // Formerly collectionId
@@ -57,9 +57,11 @@ export function BooksProvider({ children }) {
       console.error(error.message);
     }
   }
-  // run the getBooks function
+  // setting up real time subscription
   useEffect(() => {
     let unsubscribe;
+    // set up appwrite channel to listen to - this may need to be .table
+    const channel = `databases.${DATABASE_ID}.collections.${TABLE_ID}.documents `;
     if (user) {
       fetchBooks();
     } else {
