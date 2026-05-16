@@ -22,9 +22,9 @@ const Books = () => {
         contentContainerStyle={styles.list}
         renderItem={({ item }) => (
           <Pressable>
-            <ThemedCard>
-              <ThemedText>{item.title}</ThemedText>
-              <ThemedText>{item.author}</ThemedText>
+            <ThemedCard style={styles.card}>
+              <ThemedText style={styles.title}>{item.title}</ThemedText>
+              <ThemedText>Written by {item.author}</ThemedText>
             </ThemedCard>
           </Pressable>
         )}
