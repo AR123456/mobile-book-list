@@ -17,9 +17,10 @@ const Books = () => {
       </ThemedText>
       <Spacer />
       <FlatList
-        data={books}
-        keyExtractor={(item) => item.$id}
-        contentContainerStyle={styles.list}
+        data={books} //books array
+        keyExtractor={(item) => item.$id} // unique id for each item in array
+        contentContainerStyle={styles.list} // styes for the content element
+        // renderItem function witch returns a template rendered for  each item in list
         renderItem={({ item }) => (
           <Pressable>
             <ThemedCard style={styles.card}>
