@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 
-import { databases, DATABASE_ID, TABLE_ID } from "../lib/appwrite";
+import { databases, DATABASE_ID, TABLE_ID, client } from "../lib/appwrite";
 import { Permission, Role, ID, Query } from "react-native-appwrite";
 import { useUser } from "../hooks/useUser";
 
@@ -16,7 +16,7 @@ export function BooksProvider({ children }) {
         Query.equal("userId", user.$id),
       ]);
       setBooks(response.documents);
-      console.log(response.documents);
+      // console.log(response.documents);
     } catch (error) {
       console.error(error.message);
     }
@@ -59,7 +59,7 @@ export function BooksProvider({ children }) {
   }
   // run the getBooks function
   useEffect(() => {
-    //when user logs in get books , clear them when they log out
+    let unsubscribe;
     if (user) {
       fetchBooks();
     } else {
