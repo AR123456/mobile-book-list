@@ -78,6 +78,11 @@ export function BooksProvider({ children }) {
       //
       setBooks([]);
     }
+    // clean up function avalible in useEffect hook runs whenever something triggers a re run of the component just before the use effect function runs again - un subscribe
+    return () => {
+      //check if there is a value for unscubscribe, if there is run unsubscribe function
+      if (unsubscribe) unsubscribe();
+    };
   }, [user]);
   return (
     <BooksContext.Provider
