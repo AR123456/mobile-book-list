@@ -6,6 +6,7 @@ import Spacer from "../../components/Spacer";
 import ThemedText from "../../components/ThemedText";
 import ThemedView from "../../components/ThemedView";
 import ThemedCard from "../../components/ThemedCard";
+import details from "../../app/(dashboard)/details";
 
 const Books = () => {
   const { books } = useBooks();
@@ -22,7 +23,7 @@ const Books = () => {
         contentContainerStyle={styles.list} // styes for the content element
         // renderItem function witch returns a template rendered for  each item in list
         renderItem={({ item }) => (
-          <Pressable>
+          <Pressable onPress={() => details()}>
             <ThemedCard style={styles.card}>
               <ThemedText style={styles.title}>{item.title}</ThemedText>
               <ThemedText>Written by {item.author}</ThemedText>
