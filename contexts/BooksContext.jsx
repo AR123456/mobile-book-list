@@ -60,17 +60,18 @@ export function BooksProvider({ children }) {
   // setting up real time subscription
   useEffect(() => {
     let unsubscribe;
-    // set up appwrite channel to listen to - this may need to be .table
+    // set up appwrite channel to listen to aka a path to a resource - this may need to be .table
     const channel = `databases.${DATABASE_ID}.collections.${TABLE_ID}.documents`;
     if (user) {
       // only fetch the data if the user is authenticated
       fetchBooks();
       unsubscribe = client.subscribe(channel, (response) => {
         //destructure - events is an array
-        const { payload, event } = response;
+        const { payload, events } = response;
         // listen for a create event- use its payload to update state - looking for word create
         if (events[0].includes("create")) {
           //use payload to update state
+          setBooks((prevBooks) => [...prevBooks, payload]);
         }
       });
     } else {
