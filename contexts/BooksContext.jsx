@@ -65,7 +65,14 @@ export function BooksProvider({ children }) {
     if (user) {
       // only fetch the data if the user is authenticated
       fetchBooks();
-      unsubscribe = client.subscribe(channel, () => {});
+      unsubscribe = client.subscribe(channel, (response) => {
+        //destructure - events is an array
+        const { payload, event } = response;
+        // listen for a create event- use its payload to update state - looking for word create
+        if (events[0].includes("create")) {
+          //use payload to update state
+        }
+      });
     } else {
       //
       setBooks([]);
