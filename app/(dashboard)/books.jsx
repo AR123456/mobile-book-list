@@ -25,7 +25,7 @@ const Books = () => {
         contentContainerStyle={styles.list} // styes for the content element
         // renderItem function witch returns a template rendered for  each item in list
         renderItem={({ item }) => (
-          <Pressable onPress={() => router.push("./details")}>
+          <Pressable onPress={() => router.push(`./details/${item.$id}`)}>
             <ThemedCard style={styles.card}>
               <ThemedText style={styles.title}>{item.title}</ThemedText>
               <ThemedText>Written by {item.author}</ThemedText>

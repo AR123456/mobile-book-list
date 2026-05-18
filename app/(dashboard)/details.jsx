@@ -12,7 +12,7 @@ import ThemedCard from "../../components/ThemedCard";
 
 const details = (item) => {
   const { item } = useBooks();
-  console.log(item); //{"segment": "details"}
+  console.log(item.description); //{"segment": "details"}
   try {
     <ThemedCard
       style={styles.card}
