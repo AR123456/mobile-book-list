@@ -11,6 +11,7 @@ import ThemedView from "../../components/ThemedView";
 import ThemedCard from "../../components/ThemedCard";
 
 const details = (pressed) => {
+  console.log(pressed); //{"segment": "details"}
   try {
     <Text>{pressed ? "Pressed!" : "Press Me"}</Text>;
   } catch (error) {
