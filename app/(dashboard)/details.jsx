@@ -10,8 +10,12 @@ import ThemedText from "../../components/ThemedText";
 import ThemedView from "../../components/ThemedView";
 import ThemedCard from "../../components/ThemedCard";
 
-const details = () => {
-  console.log("Pressed");
+const details = (pressed) => {
+  try {
+    <Text>{pressed ? "Pressed!" : "Press Me"}</Text>;
+  } catch (error) {
+    console.error(error);
+  }
   //   return (
   //     <View>
   //       <Text>details</Text>

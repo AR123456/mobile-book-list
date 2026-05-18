@@ -6,10 +6,12 @@ import Spacer from "../../components/Spacer";
 import ThemedText from "../../components/ThemedText";
 import ThemedView from "../../components/ThemedView";
 import ThemedCard from "../../components/ThemedCard";
-import details from "../../app/(dashboard)/details";
+
+import { useRouter } from "expo-router";
 
 const Books = () => {
   const { books } = useBooks();
+  const router = useRouter();
   return (
     <ThemedView style={styles.container} safe={true}>
       <Spacer />
@@ -23,7 +25,7 @@ const Books = () => {
         contentContainerStyle={styles.list} // styes for the content element
         // renderItem function witch returns a template rendered for  each item in list
         renderItem={({ item }) => (
-          <Pressable onPress={() => details()}>
+          <Pressable onPress={() => router.push("./details")}>
             <ThemedCard style={styles.card}>
               <ThemedText style={styles.title}>{item.title}</ThemedText>
               <ThemedText>Written by {item.author}</ThemedText>
