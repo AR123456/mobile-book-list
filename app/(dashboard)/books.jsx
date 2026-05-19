@@ -6,7 +6,7 @@ import Spacer from "../../components/Spacer";
 import ThemedText from "../../components/ThemedText";
 import ThemedView from "../../components/ThemedView";
 import ThemedCard from "../../components/ThemedCard";
-
+// to route to details page
 import { useRouter } from "expo-router";
 
 const Books = () => {
@@ -25,6 +25,7 @@ const Books = () => {
         contentContainerStyle={styles.list} // styes for the content element
         // renderItem function witch returns a template rendered for  each item in list
         renderItem={({ item }) => (
+          // book id
           <Pressable onPress={() => router.push(`/books/${item.$id}`)}>
             <ThemedCard style={styles.card}>
               <ThemedText style={styles.title}>{item.title}</ThemedText>

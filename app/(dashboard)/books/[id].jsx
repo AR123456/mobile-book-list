@@ -10,11 +10,16 @@ const BookDetails = () => {
   return (
     // this safe just keeps the view from being too far up the screen
     <ThemedView safe={true} style={styles.container}>
-      <Text>BookDetails</Text>
+      <ThemedText>BookDetails</ThemedText>
     </ThemedView>
   );
 };
 
 export default BookDetails;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "stretch",
+  },
+});

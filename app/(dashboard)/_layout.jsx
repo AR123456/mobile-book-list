@@ -60,6 +60,13 @@ const DashboardLayout = () => {
             ),
           }}
         />
+        {/* hide this tab that react and expo created */}
+        <Tabs.Screen
+          name="books/[id]"
+          options={{
+            href: null,
+          }}
+        />
       </Tabs>
     </UserOnly>
   );
