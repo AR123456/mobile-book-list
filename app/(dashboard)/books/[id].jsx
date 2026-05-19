@@ -13,7 +13,7 @@ const BookDetails = () => {
   return (
     // this safe just keeps the view from being too far up the screen
     <ThemedView safe={true} style={styles.container}>
-      <ThemedText>BookDetails</ThemedText>
+      <ThemedText>BookDetails- {id}</ThemedText>
     </ThemedView>
   );
 };
