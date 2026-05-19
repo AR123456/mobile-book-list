@@ -6,14 +6,15 @@ import ThemedView from "../../../components/ThemedView";
 import ThemedCard from "../../../components/ThemedCard";
 import ThemedButton from "../../../components/ThemedButton";
 
-const [id] = () => {
+const BookDetails = () => {
   return (
-    <View>
-      <Text>[id]</Text>
-    </View>
+    // this safe just keeps the view from being too far up the screen
+    <ThemedView safe={true} style={styles.container}>
+      <Text>BookDetails</Text>
+    </ThemedView>
   );
 };
 
-export default [id];
+export default BookDetails;
 
 const styles = StyleSheet.create({});
