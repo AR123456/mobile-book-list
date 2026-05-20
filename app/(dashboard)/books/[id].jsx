@@ -17,6 +17,14 @@ const BookDetails = () => {
   // id route params avalible - getting id from what is in [] in file name
   const { id } = useLocalSearchParams();
   const { fetchBookById } = useBooks();
+  useEffect(() => {
+    async function loadBook() {
+      const bookData = await fetchBookById(id);
+      setBook(bookData);
+    }
+    loadBook();
+  }, [id]);
+
   if (!book) {
     return (
       // this safe just keeps the view from being too far up the screen
