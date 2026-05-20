@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View } from "react-native";
 // to get  dynamic part of a route -expo hook
 import { useLocalSearchParams } from "expo-router";
+import { useEffect, useState } from "react";
+import { useBooks } from "../../../hooks/useBooks";
 // themed components
 import ThemedText from "../../../components/ThemedText";
 import ThemedView from "../../../components/ThemedView";
@@ -8,6 +10,8 @@ import ThemedCard from "../../../components/ThemedCard";
 import ThemedButton from "../../../components/ThemedButton";
 
 const BookDetails = () => {
+  // state for book
+  const [book, setBook] = useState(null);
   // id route params avalible - getting id from what is in [] in file name
   const { id } = useLocalSearchParams();
   return (
