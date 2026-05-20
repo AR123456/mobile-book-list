@@ -8,17 +8,30 @@ import ThemedText from "../../../components/ThemedText";
 import ThemedView from "../../../components/ThemedView";
 import ThemedCard from "../../../components/ThemedCard";
 import ThemedButton from "../../../components/ThemedButton";
+import Spacer from "../../../components/Spacer";
+import ThemedLoader from "../../../components/ThemedCard";
 
 const BookDetails = () => {
   // state for book
   const [book, setBook] = useState(null);
   // id route params avalible - getting id from what is in [] in file name
   const { id } = useLocalSearchParams();
+  const { fetchBookById } = useBooks();
+  if (!book) {
+    return (
+      // this safe just keeps the view from being too far up the screen
+      <ThemedView safe={true} style={styles.container}>
+        <ThemedLoader />
+      </ThemedView>
+    );
+  }
   return (
     // this safe just keeps the view from being too far up the screen
     <ThemedView safe={true} style={styles.container}>
-      {/* invoke fetch by ID */}
-      <ThemedText>BookDetails- {id}</ThemedText>
+      <ThemedCard style={styles.card}>
+        {/* invoke fetch by ID */}
+        <ThemedText>BookDetails- {id}</ThemedText>
+      </ThemedCard>
     </ThemedView>
   );
 };
