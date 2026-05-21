@@ -21,8 +21,15 @@ export function BooksProvider({ children }) {
       console.error(error.message);
     }
   }
+  // use id arg to fetch the book
   async function fetchBookById(id) {
     try {
+      const response = await databases.getDocument(
+        DATABASE_ID,
+        TABLE_ID, // Formerly collectionId
+        id,
+      );
+      return response;
     } catch (error) {
       console.error(error.message);
     }
@@ -47,11 +54,12 @@ export function BooksProvider({ children }) {
   }
   async function deleteBook(id) {
     try {
+      await databases.deleteDocument(DATABASE_ID, TABLE_ID, id);
     } catch (error) {
       console.error(error.message);
     }
   }
-  async function updateBook() {
+  async function updateBook(id) {
     try {
     } catch (error) {
       console.error(error.message);
