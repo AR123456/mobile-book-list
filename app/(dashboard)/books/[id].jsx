@@ -38,7 +38,8 @@ const BookDetails = () => {
     <ThemedView safe={true} style={styles.container}>
       <ThemedCard style={styles.card}>
         {/* invoke fetch by ID */}
-        <ThemedText>BookDetails- {id}</ThemedText>
+        <ThemedText style={styles.title}>{book.title}</ThemedText>
+        <ThemedText style={styles.title}>Written by {book.author}</ThemedText>
       </ThemedCard>
     </ThemedView>
   );
