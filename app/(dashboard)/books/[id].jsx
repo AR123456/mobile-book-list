@@ -40,6 +40,10 @@ const BookDetails = () => {
         {/* invoke fetch by ID */}
         <ThemedText style={styles.title}>{book.title}</ThemedText>
         <ThemedText style={styles.title}>Written by {book.author}</ThemedText>
+        <Spacer />
+        <ThemedText title={true}>Book description: </ThemedText>
+        <Spacer height={10} />
+        <ThemedText>{book.description}</ThemedText>
       </ThemedCard>
     </ThemedView>
   );
