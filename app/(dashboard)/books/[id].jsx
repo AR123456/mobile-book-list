@@ -24,7 +24,7 @@ const BookDetails = () => {
     }
     loadBook();
   }, [id]);
-
+  // initially there is no book so need to give react some time to get it
   if (!book) {
     return (
       // this safe just keeps the view from being too far up the screen
@@ -45,6 +45,9 @@ const BookDetails = () => {
         <Spacer height={10} />
         <ThemedText>{book.description}</ThemedText>
       </ThemedCard>
+      <ThemedButton style={styles.delete} onPress={() => deleteBook(id)}>
+        Delete Book{" "}
+      </ThemedButton>
     </ThemedView>
   );
 };
