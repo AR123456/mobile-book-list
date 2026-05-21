@@ -56,4 +56,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "stretch",
   },
+  title: {
+    fontSize: 22,
+    marginVertical: 10,
+  },
+  card: {
+    margin: 20,
+  },
 });
