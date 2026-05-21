@@ -46,7 +46,7 @@ const BookDetails = () => {
         <ThemedText>{book.description}</ThemedText>
       </ThemedCard>
       <ThemedButton style={styles.delete} onPress={() => deleteBook(id)}>
-        Delete Book{" "}
+        <Text style={{ color: "#fff", textAlign: "center" }}>Delete Book</Text>
       </ThemedButton>
     </ThemedView>
   );
