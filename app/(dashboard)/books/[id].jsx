@@ -66,4 +66,10 @@ const styles = StyleSheet.create({
   card: {
     margin: 20,
   },
+  delete: {
+    marginTop: 40,
+    backgroundColor: Colors.warning,
+    width: 200,
+    alignSelf: "center",
+  },
 });
