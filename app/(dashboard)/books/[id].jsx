@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import { useBooks } from "../../../hooks/useBooks";
+import { router } from "expo-router";
 // themed components
 import ThemedText from "../../../components/ThemedText";
 import ThemedView from "../../../components/ThemedView";
@@ -17,9 +18,11 @@ const BookDetails = () => {
   // id route params avalible - getting id from what is in [] in file name
   const { id } = useLocalSearchParams();
   const { fetchBookById, deleteBook } = useBooks();
+  const router = useRouter();
   const handleDelete = async () => {
     await deleteBook(id);
     setBook(null);
+    router.replace(`/books`);
   };
   useEffect(() => {
     async function loadBook() {
