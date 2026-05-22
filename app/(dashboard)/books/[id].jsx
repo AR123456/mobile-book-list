@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import { useBooks } from "../../../hooks/useBooks";
-import { router } from "expo-router";
+import { Colors } from "../../../constants/Colors";
 // themed components
 import ThemedText from "../../../components/ThemedText";
 import ThemedView from "../../../components/ThemedView";
