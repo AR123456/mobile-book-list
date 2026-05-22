@@ -16,7 +16,11 @@ const BookDetails = () => {
   const [book, setBook] = useState(null);
   // id route params avalible - getting id from what is in [] in file name
   const { id } = useLocalSearchParams();
-  const { fetchBookById } = useBooks();
+  const { fetchBookById, deleteBook } = useBooks();
+  const handleDelete = async () => {
+    await deleteBook(id);
+    setBook(null);
+  };
   useEffect(() => {
     async function loadBook() {
       const bookData = await fetchBookById(id);
@@ -45,7 +49,7 @@ const BookDetails = () => {
         <Spacer height={10} />
         <ThemedText>{book.description}</ThemedText>
       </ThemedCard>
-      <ThemedButton style={styles.delete} onPress={() => deleteBook(id)}>
+      <ThemedButton style={styles.delete} onPress={handleDelete}>
         <Text style={{ color: "#fff", textAlign: "center" }}>Delete Book</Text>
       </ThemedButton>
     </ThemedView>
