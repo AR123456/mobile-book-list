@@ -81,6 +81,13 @@ export function BooksProvider({ children }) {
           //use payload to update state
           setBooks((prevBooks) => [...prevBooks, payload]);
         }
+        if (events[0].includes("delete")) {
+          //filter the deleted book from view
+          setBooks((prevBooks) =>
+            // false filters out
+            prevBooks.filter((book) => book.$id !== payload.$id),
+          );
+        }
       });
     } else {
       //
