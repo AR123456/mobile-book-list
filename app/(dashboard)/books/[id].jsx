@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 // to get  dynamic part of a route -expo hook
-import { useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { useBooks } from "../../../hooks/useBooks";
 import { Colors } from "../../../constants/Colors";
